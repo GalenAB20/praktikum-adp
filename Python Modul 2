@@ -1,0 +1,105 @@
+print('               Selamat Datang di Bandara Konoha')
+print()
+print('     Silahkan isi data diri anda')
+print()
+Nama = input('Nama          : ')
+Umur = int(input('Umur          : '))
+JK = input('Jenis Kelamin : ')
+
+print()
+print('     Silahkan Pilih Tujuan Anda')
+print()
+print('1. Bengkulu')
+print('2. Jakarta')
+print('3. Bali')
+print()
+Kota = int(input('Tiket Nomor Berapa? (1/2/3)   '))
+
+if Kota == 1:
+    K = 'Bengkulu'
+    print()
+    print('     Silahkan Pilih Jenis Maskapai')
+    print()
+    print('1. Ekonomi (Rp225.000)')
+    print('2. Bisnis (Rp285.000)')
+    print('3. First Class (Rp385.000)')
+    print()
+    JM = int(input('Maskapai Nomor Berapa? (1/2/3)   '))
+    print()
+    Tiket = int(input('Untuk Berapa Kursi?   '))
+    if JM == 1:
+        Harga = 225000
+        M = 'Ekonomi'
+    elif JM == 2:
+        Harga = 285000
+        M = 'Bisnis'
+    elif JM == 3:
+        Harga = 385000
+        M = 'First Class'
+
+elif Kota == 2:
+    K = 'Jakarta'
+    print()
+    print('     Silahkan Pilih Jenis Maskapai')
+    print()
+    print('1. Ekonomi (Rp675.000)')
+    print('2. Bisnis (Rp750.000)')
+    print('3. First Class (Rp860.000)')
+    print()
+    JM = int(input('Maskapai Nomor Berapa? (1/2/3)   '))
+    print()
+    Tiket = int(input('Untuk Berapa Kursi?   '))
+    if JM == 1:
+        Harga = 675000
+        M = 'Ekonomi'
+    elif JM == 2:
+        Harga = 750000
+        M = 'Bisnis'
+    elif JM == 3:
+        Harga = 860000
+        M = 'First Class'
+
+elif Kota == 3:
+    K = 'Bali'
+    print()
+    print('     Silahkan Pilih Jenis Maskapai')
+    print()
+    print('1. Ekonomi (Rp1.150.000)')
+    print('2. Bisnis (Rp1.375.000)')
+    print('3. First Class (Rp1.625.000)')
+    print()
+    JM = int(input('Maskapai Nomor Berapa? (1/2/3)   '))
+    print()
+    Tiket = int(input('Untuk Berapa Kursi?   '))
+    if JM == 1:
+        Harga = 1150000
+        M = 'Ekonomi'
+    elif JM == 2:
+        Harga = 1375000
+        M = 'Bisnis'
+    elif JM == 3:
+        Harga = 1625000
+        M = 'First Class'
+
+if Tiket < 4:
+    Total = Harga * Tiket
+else:
+    Total = Harga * Tiket * (75 / 100)
+
+print()
+print('     Bukti Pemesanan')
+print()
+print('Nama           :', Nama)
+print('Umur           :', Umur)
+print('Jenis Kelamin  :', JK)
+print()
+print('________________________________________')
+print()
+print('Kota Tujuan    :', K)
+print('Jenis Maskapai :', M)
+print('Jumlah Tiket   :', Tiket)
+print(f'Total Harga    : Rp{Total:15.2f}')
+print()
+print('________________________________________')
+print()
+print('Semoga Selamat Sampai Tujuan :)')
