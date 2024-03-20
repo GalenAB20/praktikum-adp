@@ -1,0 +1,95 @@
+uses crt;
+var
+        Nama, JK,M,K : string;
+        Umur, Kota, JM, Tiket : integer;
+        Harga : longint;
+        Total : real;
+begin
+clrscr;
+GotoXY(20,2); Writeln('Selamat Datang di Bandara Konoha');
+GotoXY(7,4); Writeln('Silahkan isi data diri anda');
+GotoXY(2,6); Write('Nama          : '); readln(Nama);
+GotoXY(2,7); Write('Umur          : '); readln(Umur);
+GotoXY(2,8); Write('Jenis Kelamin : '); readln(JK);
+
+
+clrscr;
+GotoXY(7,4); Writeln('Silahkan Pilih Tujuan Anda');
+GotoXY(2,6); Writeln('1. Bengkulu');
+GotoXY(2,7); Writeln('2. Jakarta');
+GotoXY(2,8); Writeln('3. Bali');
+GotoXY(2,10); Write('Tiket Menuju Mana? (1/2/3)   '); readln(Kota);
+
+If Kota = 1 then
+        Begin
+        clrscr;
+                K := 'Bengkulu';
+                GotoXY(7,4); Writeln('Silahkan Pilih Jenis Maskapai');
+                GotoXY(2,6); Writeln('1. Ekonomi (Rp225.000)');
+                GotoXY(2,7); Writeln('2. Bisnis (Rp285.000)');
+                GotoXY(2,8); Writeln('3. First Class (Rp385.000)');
+                GotoXY(2,10); Write('Maskapai Apa? (1/2/3)   '); readln(JM);
+                GotoXY(2,12); Write('Untuk Berapa Kursi?     '); readln(Tiket);
+                        If JM = 1 then
+                                Harga := 225000; M:='Ekonomi';
+                        If JM = 2 then
+                                Harga := 285000; M:='Bisnis';
+                        If JM = 3 then
+                                Harga := 385000; M:='First Class';
+        end;
+
+If Kota = 2 then
+        Begin
+        clrscr;
+                K:='Jakarta';
+                GotoXY(7,4); Writeln('Silahkan Pilih Jenis Maskapai');
+                GotoXY(2,6); Writeln('1. Ekonomi (Rp675.000)');
+                GotoXY(2,7); Writeln('2. Bisnis (Rp750.000)');
+                GotoXY(2,8); Writeln('3. First Class (Rp860.000)');
+                GotoXY(2,10); Write('Maskapai Nomor Berapa? (1/2/3)   '); readln(JM);
+                GotoXY(2,12); Write('Untuk Berapa Kursi?   '); readln(Tiket);
+                        If JM = 1 then
+                                Harga := 675000; M :='Ekonomi';
+                        If JM = 2 then
+                                Harga := 750000; M :='Bisnis';
+                        If JM = 3 then
+                                Harga := 860000; M :='First Class';
+        end;
+
+If Kota = 3 then
+        Begin
+        clrscr;
+                K:='Bali';
+                GotoXY(7,4); Writeln('Silahkan Pilih Jenis Maskapai');
+                GotoXY(2,6); Writeln('1. Ekonomi (Rp1.150.000)');
+                GotoXY(2,7); Writeln('2. Bisnis (Rp1.375.000)');
+                GotoXY(2,8); Writeln('3. First Class (Rp1.625.000)');
+                GotoXY(2,10); Write('Maskapai Nomor Berapa? (1/2/3)   '); readln(JM);
+                GotoXY(2,12); Write('Untuk Berapa Kursi?   '); readln(Tiket);
+                        If JM = 1 then
+                                Harga := 1150000; M:='Ekonomi';
+                        If JM = 2 then
+                                Harga := 1375000; M:='Bisnis';
+                        If JM = 3 then
+                                Harga := 1625000; M:='First Class';
+        end;
+
+If (Tiket < 4) Then
+        Total := Harga*Tiket;
+If (Tiket > 3) Then
+        Total := Harga*Tiket*(75/100);
+
+clrscr;
+GotoXY(10,4); Writeln('Bukti Pemesanan');
+GotoXY(2,6); Writeln('Nama           : ',Nama);
+GotoXY(2,7); Writeln('Umur           : ',Umur, ' Tahun');
+GotoXY(2,8); Writeln('Jenis Kelamin  : ',JK);
+GotoXY(1,10); Writeln('________________________________________');
+GotoXY(2,12); Writeln('Kota Tujuan    : ',K);
+GotoXY(2,13); Writeln('Jenis Maskapai : ',M);
+GotoXY(2,14); Writeln('Jumlah Tiket   : ',Tiket);
+GotoXY(2,15); Writeln('Total Harga    : Rp',Total:15:2);
+GotoXY(1,17); Writeln('________________________________________');
+GotoXY(7,19); Writeln('Semoga Selamat Sampai Tujuan :)');
+readln;
+end.
