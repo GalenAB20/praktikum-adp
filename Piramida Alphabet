@@ -1,0 +1,44 @@
+uses crt;
+var
+  i, j, k, n: integer;
+  huruf: char;
+
+begin
+clrscr;
+        GotoXY(20,2); Writeln('Piramida Alphabet');
+        GotoXY(5,5); write('Masukkan jumlah huruf pada piramida (1-26) : ');
+        readln(n);
+        Writeln;
+
+        if (n < 1) or (n > 26) then
+        begin
+                writeln('Inputan Error, Mulai Ulang Kembali');
+                readln;
+                exit;
+        end;
+
+        for i := 1 to n do
+        begin
+                huruf := Chr(65);
+
+                for j := 1 to n - i do
+                        write(' ');
+
+                        for k := 1 to i do
+                        begin
+                                write(huruf);
+                                Inc(huruf);
+                        end;
+
+                        Dec(huruf);
+
+                        for k := i - 1 downto 1 do
+                        begin
+                                Dec(huruf);
+                                write(huruf);
+                        end;
+                        writeln;
+        end;
+
+readln;
+end.
