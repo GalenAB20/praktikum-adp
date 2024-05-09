@@ -1,0 +1,37 @@
+n = int(input("Banyak Barang : "))
+print()
+DataToko = []
+for i in range(n):
+    barang = input("Nama Barang ke {} : ".format(i+1))
+    harga = int(input("Harga Barang : "))
+    stock = int(input("Stock Barang : "))
+    print()
+    DataToko.append([barang,harga,stock])
+
+print()
+print("      Stock barang di Toko")
+print()
+print("{:<15} {:<10} {:<10}".format("Nama Barang", "Harga", "Stock Barang"))
+for data in DataToko:
+    print("{:<16} {:<10} {:<10}".format(data[0], data[1], data[2])) 
+
+print()
+PendapatanToko = []
+for data in DataToko:
+    pendapatan = data[1]*data[2]
+    PendapatanToko.append([data[0],pendapatan])
+
+PendapatanToko.sort(key=lambda x: x[1])
+BarangTerbanyak = PendapatanToko[-1][0]
+PendapatanTerbanyak = PendapatanToko[-1][1]
+BarangTerdikit = PendapatanToko[0][0]
+PendapatanTerdikit = PendapatanToko[0][1]
+
+TotalPendapatan = sum([data[1] for data in PendapatanToko])
+
+print()
+print("Barang dengan keuntungan terbesar yaitu ", BarangTerbanyak," dengan keuntungan sebanyak Rp",PendapatanTerbanyak)
+print()
+print("Barang dengan keuntungan terdikit yaitu ", BarangTerdikit," dengan keuntungan sebanyak Rp",PendapatanTerdikit)
+print()
+print("Total keuntungan yang diperoleh adalah Rp",TotalPendapatan)
