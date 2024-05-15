@@ -1,7 +1,7 @@
 uses crt;
 var
         va,a,t,v,s : real;
-        i,j,n : integer;
+        i,n : integer;
 
 
 function Kecepatan(va,a,t:real):real;
