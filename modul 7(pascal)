@@ -1,0 +1,46 @@
+uses crt;
+var
+        va,a,t,v,s : real;
+        i,j,n : integer;
+
+
+function Kecepatan(va,a,t:real):real;
+begin
+        Kecepatan := va + a*t;
+        v := Kecepatan;
+end;
+
+function Jarak(va,a,t:real):real;
+begin
+        Jarak := va*t-((1/2)*a*(sqr(t)));
+        s := Jarak;
+end;
+
+procedure tabel;
+begin
+        gotoXY(10,5+i*2); readln(va);
+        gotoXY(23,5+i*2); readln(a);
+        gotoXY(32,5+i*2); readln(t);
+        Kecepatan(va,a,t);
+        gotoXY(41,5+i*2); writeln(v:7:2);
+        Jarak(va,a,t);
+        gotoXY(52,5+i*2); Writeln(s:4:2);
+end;
+
+begin
+clrscr;
+        repeat write('Input n : '); readln(n); gotoXY(1,1); clreol; until (n>0);
+        clrscr;
+        gotoXY(2,3);  Write('n');
+        gotoXY(6,3);  Write('Kecepatan');  gotoXY(6,4);  Write('Awal(m/s)');
+        gotoXY(18,3); Write('Percepatan'); gotoXY(18,4); Write('(m^2/s)');
+        gotoXY(31,3); Write('Waktu');      gotoXY(31,4); Write('(s)');
+        gotoXY(39,3); Write('Kecepatan');  gotoXY(39,4); Write('Akhir(m/s)');
+        gotoXY(51,3); Write('Jarak');      gotoXY(52,4); Write('(m)');
+        for i := 1 to n do
+        begin
+                gotoXY(2,5+i*2); write(i);
+                tabel;
+        end;
+readln;
+end.
