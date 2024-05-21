@@ -1,0 +1,78 @@
+def Baca_Data(Nama_File):
+    with open(Nama_File,'r') as f :
+        DataKeuangan = []
+        for baris in f:
+            Tanggal, Ket, Nominal, Jenis = baris.strip().split(', ')
+            DataKeuangan.append((Tanggal, Ket, int(Nominal), Jenis))
+        return DataKeuangan
+
+def Tampilkan_Data(DataKeuangan):
+    print("{:<10} {:<50} {:<17} {:<15}".format("Tanggal", "Keterangan", "Nominal", "Jenis"))
+    for Data in DataKeuangan :
+        print("{:<10} {:<50} Rp{:<15} {:<15}".format(Data[0], Data[1], Data[2], Data[3]))
+
+def Tambah_Data(Nama_File, Tanggal, Ket, Nominal, Jenis):
+        with open(Nama_File, 'a') as f:
+            if f.tell >0:
+                f.write("\n")
+            f.write(f"{Tanggal}, {Ket}, {Nominal}, {Jenis}")
+
+def Hapus_Data(Nama_File, Ket_Hapus):
+     Data = Baca_Data(Nama_File)
+     Data_Baru = [item for item in Data if item[1] != Ket_Hapus]
+     
+     with open(Nama_File,'w') as f:
+          for Tanggal, Ket, Nominal, Jenis in Data_Baru:
+            f.write(f"{Tanggal}, {Ket}, {Nominal}, {Jenis}\n")
+
+def Sisa_Uang(Nama_File):
+    DataKeuangan = Baca_Data(Nama_File)
+    Nominal = []
+    for data in DataKeuangan:
+        if data[3] == 'Pemasukan' :
+            Uang = data[2]
+            Nominal.append(Uang)
+        elif data[3] == 'Pengeluaran':
+            Uang = -data[2]
+            Nominal.append(Uang)
+    
+    Sisa = sum(Nominal)
+    return Sisa
+
+          
+Nama_File = 'Pengeluaran dan Pemasukan.txt'
+
+def Menu():
+    while True:
+        print()
+        print("Menu")
+        print("1. Lihat Data")
+        print("2. Tambah Data")
+        print("3. Hapus Data")
+        print("4. Sisa Uang")
+        print('5. Exit')
+        M = input("Ingin melakukan apa? 1/2/3/4/5 ")
+        print()
+
+        if M == '1' :
+            DataKeuangan = Baca_Data(Nama_File)
+            Tampilkan_Data(DataKeuangan)
+        elif M == '2' :
+            Tanggal = input("Tanggal : ")
+            Ket = input("Keterangan : ")
+            Nominal = input("Nominal : ")
+            Jenis = input("Jenis : ")
+            Tambah_Data(Nama_File, Tanggal, Ket, Nominal, Jenis)
+        elif M == '3' :
+            Ket_Hapus = input("Keterangan Yang Ingin dihapus : ")
+            Hapus_Data(Nama_File, Ket_Hapus)
+        elif M == '4' :
+            Sisa = Sisa_Uang(Nama_File)
+            print(f"Sisa Uang Anda : Rp{Sisa}")
+        elif M == '5' :
+            print("Anda Telah Keluar Dari Menu, Terimakasih")
+            break
+        else:
+            print("Inputan Tidak Valid, Coba Lagi")
+
+Menu()
