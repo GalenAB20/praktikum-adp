@@ -1,3 +1,4 @@
-20052024, Beli Kwetiau Goreng, 10000, Pengeluaran
 20052024, Transfer Uang, 100000, Pemasukan
 21052024, Beli Kopi, 8500, Pengeluaran
+22052024, Beli Nasi Ayam Katsu, 12000, Pengeluaran
+22052024, Beli Jajanan, 13500, Pengeluaran
