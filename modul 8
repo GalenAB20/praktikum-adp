@@ -50,7 +50,7 @@ def Menu():
         print("3. Hapus Data")
         print("4. Sisa Uang")
         print('5. Exit')
-        M = input("Ingin melakukan apa? 1/2/3/4/5 ")
+        M = input("Ingin melakukan apa? (1/2/3/4/5) ")
         print()
 
         if M == '1' :
