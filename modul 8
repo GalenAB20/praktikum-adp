@@ -39,8 +39,6 @@ def Sisa_Uang(Nama_File):
     Sisa = sum(Nominal)
     return Sisa
 
-          
-Nama_File = 'Pengeluaran dan Pemasukan.txt'
 
 def Menu():
     while True:
@@ -75,4 +73,5 @@ def Menu():
         else:
             print("Inputan Tidak Valid, Coba Lagi")
 
+Nama_File = 'Pengeluaran dan Pemasukan.txt'
 Menu()
