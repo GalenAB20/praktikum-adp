@@ -42,6 +42,7 @@ def Sisa_Uang(Nama_File):
 
 def Menu():
     while True:
+        Nama_File = input("Apa Nama File Anda (ex: Nama_File.txt) : ")
         print()
         print("Menu")
         print("1. Lihat Data")
@@ -73,5 +74,4 @@ def Menu():
         else:
             print("Inputan Tidak Valid, Coba Lagi")
 
-Nama_File = 'Pengeluaran dan Pemasukan.txt'
 Menu()
