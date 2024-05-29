@@ -43,7 +43,29 @@ time.sleep(0.5)
 
 print("{:<22}".format(" "),end="")
 cprint("{:<29}".format(" "), "light_red","on_light_red")
-time.sleep(0.5)
+
+def print_meja():
+    meja = [
+        "_________________________________",
+        "|||||||||||||||||||||||||||||||||",
+        "_________________________________",
+        "              //||\\\            ",
+        "             // || \\\           ",
+        "            //  ||  \\\          ",
+        "           //   ||   \\\         ",
+        "          //    ||    \\\        ",
+        "         //     ||     \\\       ",
+        "        //      ||      \\\      ",
+        "       //       ||       \\\     ",
+    ]
+
+    for line in meja:
+        print("{:<20}".format(" "),end="")
+        print(colored(line, "black",attrs=["bold"]))
+
+
+print_meja()
+
 
 print()
 print()
